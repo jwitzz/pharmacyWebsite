@@ -9,9 +9,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 app.post('/refill',async(req, res) => {
     const {name, email, rx} = req.body;
+    console.log('Refill request received:', name, email, rx);
 
     const pharmacyMessage = {
       from: 'axccentz@gmail.com',
