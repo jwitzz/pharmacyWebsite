@@ -16,6 +16,8 @@ document.getElementById('refill-form').addEventListener('submit', async (e) => {
   
       const result = await response.json();
       alert(result.message);
+
+      document.getElementById('refill-form').reset();
     } catch (err) {
       console.error('Error submitting refill:', err);
       alert('Failed to send refill request.');
